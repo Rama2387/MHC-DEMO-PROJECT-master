@@ -1,0 +1,61 @@
+.side-menu {
+  height: 92vh; /* Adjust the height as needed */
+  background-color: #4b444413;
+  padding: 0px;
+  margin-top: 8vh;
+
+
+}
+/* .side-menu .list-group-item:hover {
+  background-color: #597b9d;
+  color: #000000;
+} */
+
+ .list-group-item.active {
+  background-color: #287acc;
+  color: #000000;
+}
+
+/* .list-group-item{
+  background-color: rgb(147, 140, 132);
+} */
+.scroll{
+  overflow-y: scroll;
+  max-height: 100%;
+}
+
+.sub-item {
+  color: #333; /* Customize the color for sub-items */
+  margin-bottom: 5px; /* Add some vertical spacing between sub-items */
+}
+
+
+.selected-sub-item {
+  font-weight: bold; /* Highlight the selected sub-item */
+}
+.has-sub-items {
+  background-color: #287acc; /* Change this color to the desired background color for the main item */
+  color: #000000; /* Change this color to the desired text color for the main item */
+}
+.sub-items-list {
+  list-style-type: none; /* Remove the default bullet points */
+  padding-left: 20px; /* Add some left padding for indentation */
+}
+
+.sub-items-list .sub-item {
+  background-color: #f0f0f0;
+
+}
+
+.fa-right-arrow:before {
+  content: "\f061"; /* Unicode for right arrow icon */
+  /* Add any additional styles for the right arrow icon */
+}
+
+.fa-down-arrow:before {
+  content: "\f063"; /* Unicode for down arrow icon */
+  /* Add any additional styles for the down arrow icon */
+}
+
+
+

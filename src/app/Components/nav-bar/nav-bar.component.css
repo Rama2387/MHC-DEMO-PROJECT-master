@@ -1,0 +1,28 @@
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* z-index: 999; */
+  /* Add any additional styles for your header */
+}
+.navbar {
+  background-color: rgba(5, 46, 107, 0.507);
+
+}
+/* .container-fluid {
+  margin-top: 60px;
+} */
+.side-nav-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.side-nav-button:hover {
+  background-color: aliceblue;
+  border-radius: 10%;
+}
+

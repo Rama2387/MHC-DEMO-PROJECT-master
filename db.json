@@ -1,0 +1,120 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "claims" : [
+    {
+      "id": 1,
+      "claimNumber" : 123,
+      "controlNumber" : 123,
+      "checkNumber" : 123,
+      "status" : "OPEN",
+      "MemberId" : 1234,
+      "MemberName" : "srinivas",
+      "ProviderId" : 4321,
+      "ProviderName" : "XXXX",
+      "VendorName" : "YYYY",
+      "DateReceived" : "25-05-2023",
+      "TotalCharges"  : 10000,
+      "AmountPaid" : 8000
+
+    },
+    {
+      "id": 2,
+      "claimNumber" : 456,
+      "controlNumber" : 456,
+      "checkNumber" : 456,
+      "status" : "CLOSED",
+      "MemberId" : 1234,
+      "MemberName" : "AAAA",
+      "ProviderId" : 4321,
+      "ProviderName" : "XXXX",
+      "VendorName" : "YYYY",
+      "DateReceived" : "25-05-2023",
+      "TotalCharges"  : 85000,
+      "AmountPaid" : 7000
+
+    },
+    {
+      "id": 3,
+      "claimNumber" : 4567,
+      "controlNumber" : 456,
+      "checkNumber" : 456,
+      "status" : "OPEN",
+      "MemberId" : 1234,
+      "MemberName" : "AAAA",
+      "ProviderId" : 4321,
+      "ProviderName" : "ZZZZ",
+      "VendorName" : "ZZZZ",
+      "DateReceived" : "25-05-2023",
+      "TotalCharges"  : 85000,
+      "AmountPaid" : 6000
+
+    }
+  ],
+  "users" : [
+    {
+      "id":1,
+      "Name":"srinivas",
+      "password":"sri123"
+    },
+    {
+      "id": 2,
+      "Name" : "chandu",
+      "password" : "123"
+    }
+  ],
+  "providers" :[
+    {
+      "id":1,
+      "providerId" :123,
+      "lastName" : "ABC",
+      "firstName": "xyz",
+      "type":"A",
+      "lob":"A1B2",
+      "plan":"1A2B",
+      "npiNumber" : 456,
+      "speciality":"AAA",
+      "address_1_2":"AAA_BBB_CCC",
+      "city":"Hyderabad",
+      "zip":54321,
+      "phone":"98765211",
+      "ssn_TaxId":63432
+    }
+  ],
+  "members" : [
+    {
+      "id":1,
+      "memberId" :123,
+      "lastName" : "ABC",
+      "firstName": "xyz",
+      "middleName":"def",
+      "gender":"M",
+      "recipentId":"A1B2",
+      "hicn":"1A2B",
+      "caseNumber" : 456,
+
+      "address_1_2":"AAA_BBB_CCC",
+      "city":"Hyderabad",
+      "zip":54321,
+      "phone":"98765211",
+      "email":"Abc@xyz.com",
+      "dob":"01-01-1999",
+      "ssn_TaxId":63432
+    }
+  ]
+}

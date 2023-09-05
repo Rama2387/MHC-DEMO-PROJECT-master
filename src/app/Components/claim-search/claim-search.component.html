@@ -1,0 +1,85 @@
+<div class="container text-center">
+  <div class="mt-3 text-primary">
+    <h2>MCS - WEB SUNSET</h2>
+  </div>
+  <div class="m-3 text-info">
+    <h3>Claim Search Mockup</h3>
+  </div>
+  <div class="d-flex justify-content-center align-items-center mt-5">
+    <form [formGroup]="claimSearchForm" class="text-start">
+      <div class="d-flex">
+        <b> Claim Number :</b>
+
+        <input type="text" class="m-0 mb-2 form-control" formControlName="claimNumber"  />
+      </div>
+      <div class="d-flex">
+        <b> Control Number :</b>
+        <input type="text" class="m-0 mb-2 form-control" formControlName="controlNumber" />
+      </div>
+      <div>
+        <span class="d-flex">
+          <b> Check Number :</b>
+          <input
+            type="text"
+            class="m-0 form-control"
+            formControlName="checkNumber"
+          />
+        </span>
+      </div>
+
+      <div class="mt-3">
+        <button type="reset" class="me-2 ms-5 btn btn-danger">Clear fields</button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          (click)="claimSearchSubmit()"
+        >
+          Submit search
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <table class="table table-bordered border-primary mt-4" *ngIf="searchClicked">
+    <thead>
+      <tr class="bg-info">
+        <td>Claim Number</td>
+        <td>ControlNumber</td>
+        <td>Check Number</td>
+        <td>Status</td>
+        <td>Member Id</td>
+        <td>Member Name</td>
+        <td>Provider Id</td>
+        <td>Provider Name</td>
+        <td>Vendor Name</td>
+        <td>Date Received</td>
+        <td class="text-danger">Total Charges</td>
+        <td class="text-danger">Paid Amount</td>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="objectLength">
+     
+        <tr *ngFor="let claim of searchedClaims" class="table-active">
+          <td>{{ claim.ttchclaimNumber }}</td>
+          <td>{{ claim.ttchControlNumber }}</td>
+          <td>{{ claim.checkNumber }}</td>
+          <td>{{ claim.ttdchStatus }}</td>
+          <td>{{ claim.MemberId }}</td>
+          <td>{{ claim.MemberName }}</td>
+          <td>{{ claim.ProviderId }}</td>
+          <td>{{ claim.ProviderName }}</td>
+          <td>{{ claim.VendorName }}</td>
+          <td>{{ claim.DateReceived }}</td>
+          <td>{{ claim.TotalCharges }}</td>
+          <td>{{ claim.AmountPaid }}</td>
+        </tr>
+      </ng-container>
+      <ng-container *ngIf="!objectLength && searchClicked">
+        <tr>
+          <td colspan="12">No claims found in database</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

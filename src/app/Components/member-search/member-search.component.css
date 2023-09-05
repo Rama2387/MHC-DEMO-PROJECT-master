@@ -1,0 +1,27 @@
+.form-control {
+  width: 200px;
+  margin-left: 20px !important;
+}
+.form{
+  margin-left: 300px;
+}
+b{
+  width: 135px;
+}
+/* .input-field.error {
+  border: 1px solid red;
+  color: red;
+} */
+.error {
+  border: 1px solid red;
+  color: red;
+}
+
+input.error::placeholder {
+  color: red;
+}
+.bold-td {
+  font-weight: bold;
+}
+
+

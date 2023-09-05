@@ -1,0 +1,199 @@
+<aside class="sidebar" [ngClass]="{ show: sharedService.sidebarVisible }">
+  <!-- Sidebar content -->
+
+  <div class="side-menu">
+    <ul class="list-group scroll">
+      <li
+        class="list-group-item btn btn-link"
+        routerLink="/main"
+        (click)="handleLinkClick($event, 'main')"
+        [ngClass]="{
+          active: (sharedService.selectedMenuItem$ | async) === 'main'
+        }"
+      >
+        Main Page
+      </li>
+
+      <!-- Sub -Items -->
+      <li
+        class="list-group-item btn btn-link"
+        routerLink="/claims"
+        (click)="toggleSubItems('claims'); handleLinkClick($event, 'claims')"
+        [ngClass]="{
+          active:
+            (sharedService.selectedMenuItem$ | async) === 'claims' &&
+            activeMainItem === 'claims',
+          'has-sub-items': activeMainItem === 'claims'
+        }"
+      >
+        <i
+          class="fa-sharp fa-solid"
+          [ngClass]="{
+            'fa-right-arrow': activeMainItem !== 'claims',
+            'fa-down-arrow': activeMainItem === 'claims'
+          }"
+        ></i>
+        Claims
+        <ul *ngIf="activeMainItem === 'claims'" class="sub-items-list">
+          <li
+            [ngClass]="{
+              'sub-item': true,
+              'selected-sub-item': subItem === selectedSubItem
+            }"
+            *ngFor="let subItem of claimsSubItems"
+            (click)="
+              selectSubItem($event, subItem); handleLinkClick($event, subItem)
+            "
+            routerLink="{{ subItem }}"
+          >
+            {{ subItem }}
+
+            <!-- <a [routerLink]="subItem">{{ subItem }}</a> -->
+          </li>
+        </ul>
+      </li>
+
+      <li
+        class="list-group-item btn btn-link"
+        routerLink="/members"
+        (click)="toggleSubItems('members'); handleLinkClick($event, 'members')"
+        [ngClass]="{
+          active:
+            (sharedService.selectedMenuItem$ | async) === 'members' &&
+            activeMainItem === 'members',
+          'has-sub-items': activeMainItem === 'members'
+        }"
+      >
+      <i class="fa-sharp fa-solid" [ngClass]="{
+        'fa-right-arrow': activeMainItem !== 'members',
+        'fa-down-arrow': activeMainItem === 'members'
+      }"></i>
+        Members
+        <ul *ngIf="activeMainItem === 'members'" class="sub-items-list">
+          <li
+            [ngClass]="{
+              'sub-item': true,
+              'selected-sub-item': subItem === selectedSubItem
+            }"
+            *ngFor="let subItem of memberSubItems"
+            (click)="
+              selectSubItem($event, subItem); handleLinkClick($event, subItem)
+            "
+            [routerLink]="'/member/' + subItem"
+          >
+            {{ subItem }}
+
+            <!-- <a [routerLink]="subItem">{{ subItem }}</a> -->
+          </li>
+        </ul>
+      </li>
+      <li
+        class="list-group-item btn btn-link"
+        routerLink="/providers"
+        (click)="
+          toggleSubItems('providers'); handleLinkClick($event, 'providers')
+        "
+        [ngClass]="{
+          active: (sharedService.selectedMenuItem$ | async) === 'providers'
+        }"
+      >
+      <i class="fa-sharp fa-solid" [ngClass]="{
+        'fa-right-arrow': activeMainItem !== 'providers',
+        'fa-down-arrow': activeMainItem === 'providers'
+      }"></i>
+        Providers
+        <ul *ngIf="activeMainItem === 'providers'" class="sub-items-list">
+          <li
+            [ngClass]="{
+              'sub-item': true,
+              'selected-sub-item': subItem === selectedSubItem
+            }"
+            *ngFor="let subItem of providerSubItems"
+            (click)="
+              selectSubItem($event, subItem); handleLinkClick($event, subItem)
+            "
+            [routerLink]="'/provider/'+subItem"
+          >
+            {{ subItem }}
+
+            <!-- <a [routerLink]="subItem">{{ subItem }}</a> -->
+          </li>
+        </ul>
+      </li>
+      <li
+        class="list-group-item btn btn-link"
+        routerLink="/claimAdjustments"
+        (click)="
+          toggleSubItems('claimAdjustments');
+          handleLinkClick($event, 'claimAdjustments')
+        "
+        [ngClass]="{
+          active:
+            (sharedService.selectedMenuItem$ | async) === 'claimAdjustments'
+        }"
+      >
+      <i class="fa-sharp fa-solid" [ngClass]="{
+        'fa-right-arrow': activeMainItem !== 'claimAdjustments',
+        'fa-down-arrow': activeMainItem === 'claimAdjustments'
+      }"></i>
+        Claim Adjustments
+        <ul
+          *ngIf="activeMainItem === 'claimAdjustments'"
+          class="sub-items-list"
+        >
+          <li
+            [ngClass]="{
+              'sub-item': true,
+              'selected-sub-item': subItem === selectedSubItem
+            }"
+            *ngFor="let subItem of claimAdjustmentsSubItems"
+            (click)="
+              selectSubItem($event, subItem); handleLinkClick($event, subItem)
+            "
+            routerLink="{{ subItem }}"
+          >
+            {{ subItem }}
+
+            <!-- <a [routerLink]="subItem">{{ subItem }}</a> -->
+          </li>
+        </ul>
+      </li>
+      <li
+        class="list-group-item btn btn-link"
+        routerLink="/encounters"
+        (click)="handleLinkClick($event, 'encounters')"
+        [ngClass]="{
+          active: (sharedService.selectedMenuItem$ | async) === 'encounters'
+        }"
+      >
+      <i class="fa-sharp fa-solid" [ngClass]="{
+        'fa-right-arrow': activeMainItem !== 'encounters',
+        'fa-down-arrow': activeMainItem === 'encounters'
+      }"></i>
+        Encounters
+      </li>
+
+
+
+      <li class="list-group-item btn btn-link">ABCD</li>
+      <li class="list-group-item btn btn-link">ABCD</li>
+      <li class="list-group-item btn btn-link">ABCD</li>
+      <li class="list-group-item btn btn-link">ABCD</li>
+      <li class="list-group-item btn btn-link">ABCD</li>
+      <li class="list-group-item btn btn-link">ABCD</li>
+      <li class="list-group-item btn btn-link">ABCD</li>
+      <li class="list-group-item btn btn-link">ABCD</li>
+      <li class="list-group-item btn btn-link">ABCD</li>
+      <li class="list-group-item btn btn-link">ABCD</li>
+      <li class="list-group-item btn btn-link">ABCD</li>
+      <li class="list-group-item btn btn-link">ABCD</li>
+      <li class="list-group-item btn btn-link">ABCD</li>
+      <li class="list-group-item btn btn-link">ABCD</li>
+      <li class="list-group-item btn btn-link">ABCD</li>
+      <li class="list-group-item btn btn-link">ABCD</li>
+      <li class="list-group-item btn btn-link">ABCD</li>
+      <li class="list-group-item btn btn-link">ABCD</li>
+      <li class="list-group-item btn btn-link">ABCD</li>
+    </ul>
+  </div>
+</aside>
